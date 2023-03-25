@@ -1,24 +1,19 @@
-import React from 'react';
-import Netflix from './Netflix';
-import Amazon from './Amazon';
+import React, { useState } from 'react';
 
-const favSeries = 'youtube';
+const App = () =>{
+    let time = new Date().toLocaleTimeString();
+    const [ctime, setCtime] = useState(time);
+    const UpdateTime = () =>{
+          time = new Date().toLocaleTimeString();
+          setCtime(time);          
+    };
 
-// const FavS = () => {
-// if ( favSeries === 'netflix'){
-//    return <Netflix />;
+    setInterval(UpdateTime, 1000);
 
-// }else{
-//     return <Amazon />;
-// }
-// };
-
-const App = () => ( 
-<>
-<h1 className='heder_style'>List of top 5 Netflix Series in 2020 </h1>
-{/* <FavS /> */}
-
-{favSeries === "Amazon" ?  <Netflix /> :  <Amazon /> }
-</>
-);
+    return(
+      <>
+        <h1>{ctime}</h1>
+      </>  
+    );
+};
 export default App;
