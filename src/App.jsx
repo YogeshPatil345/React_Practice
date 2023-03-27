@@ -14,6 +14,7 @@ const App = () =>{
         setFullname(name);
     }
    return(
+    
     <>
     <div>
     <h1>Hello : {fullName}</h1>
